@@ -245,15 +245,15 @@ t8_refine_with_subelements (t8_eclass_t eclass)
             t8_eclass_to_string[eclass]);
   t8_forest_write_vtk (forest_adapt, filename);
 
-  /* Testing the leaf_face_neighbor function for a tree with subelements. The faces are enumerated as follows:
+  /* Testing the leaf_face_neighbor function for a tree with subelements. The faces of an element E are enumerated as follows:
    * 
    *             f_3
    *        x - - - - - x           x - - - x - - - x
    *        |           |           | \     |     / |
    *        |           |           |   \   |   /   |
-   *   f_0  |           | f_1       | f_2 \ | /     |
+   *   f_0  |     E     | f_1       | f_2 \ | /     |
    *        |           |           x - - - + - - - x
-   *        |           |           |     / | \     |
+   *        |           |           | E   / | \     |
    *        x - - - - - x       f_1 |   /   |   \   |
    *             f_2                | /f_0  |     \ |
    *                                x - - - x - - - x
