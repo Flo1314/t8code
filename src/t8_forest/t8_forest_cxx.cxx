@@ -2087,19 +2087,19 @@ t8_forest_leaf_face_neighbors (t8_forest_t forest, t8_locidx_t ltreeid,
                                         element_index);
 
           /* free memory */
-        neigh_scheme->t8_element_destroy (num_children_at_face - 1,
-                                          neighbor_leafs + 1);
-        /* copy the ancestor */
-        neigh_scheme->t8_element_copy (neighbor, neighbor_leafs[0]);
+          neigh_scheme->t8_element_destroy (num_children_at_face - 1,
+                                            neighbor_leafs + 1);
+          /* copy the ancestor */
+          neigh_scheme->t8_element_copy (neighbor, neighbor_leafs[0]);
 
-        /* set return values */
-        *num_neighbors = 1;
-        *pelement_indices = T8_ALLOC (t8_locidx_t, 1);
-        (*pelement_indices)[0] = element_index;
+          /* set return values */
+          *num_neighbors = 1;
+          *pelement_indices = T8_ALLOC (t8_locidx_t, 1);
+          (*pelement_indices)[0] = element_index;
 
-        T8_FREE (owners);
+          T8_FREE (owners);
 
-        return;
+          return;
 
         }                       /* end of the if neighbor is subelement case */
 
