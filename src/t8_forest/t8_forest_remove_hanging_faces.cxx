@@ -56,9 +56,6 @@ t8_forest_remove_hanging_faces_adapt (t8_forest_t forest,
   t8_locidx_t        *element_indices;
   t8_eclass_scheme_c *neigh_scheme;
 
-  /* In order to remove al hanging nodes, the forest must be balanced */
-  T8_ASSERT (t8_forest_is_balanced (forest_from));
-
   current_element =
     t8_forest_get_element_in_tree (forest_from, ltree_id, lelement_id);
   num_faces = ts->t8_element_num_faces (current_element);
